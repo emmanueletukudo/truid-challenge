@@ -1,0 +1,19 @@
+{
+	"project_id": "08784d4b-d5f3-4d97-a377-6d8191cf3616",
+	"name": "truid-app",
+	"credentials": [
+		{
+			"client_id": "7aa91f15-e0d4-40c2-9a67-27584fbc9e58",
+			"client_secret": "-l.lqvccqBuywpUDMNkBC2U9tn",
+			"created_at": "2021-01-27T13:51:40+0000",
+			"scopes": [
+				"coverage",
+				"phone_check",
+				"sim_check",
+				"subscriber_check"
+			]
+		}
+	],
+	"mode": "live",
+	"created_at": "2021-01-27T13:51:40+0000"
+}

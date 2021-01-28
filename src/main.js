@@ -9,7 +9,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
-const users = require("./routes/user.routes");
+const sims = require("./routes/simcheck.routes");
 
 /**
  * 1. create a .env
@@ -28,4 +28,4 @@ app.listen(port, () => {
 });
 
 //register your endpoints here
-app.use("/api/v1/users", users);
+app.use("/api/v1/sims", sims);

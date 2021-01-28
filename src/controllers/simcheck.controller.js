@@ -5,7 +5,6 @@
  * Ensure you run npm install if you have not done that already.
  */
 
-const SimCheckService = require("../services/SimCheckService");
 
 const simCheckController = {
   check: async (req, res, next) => {
