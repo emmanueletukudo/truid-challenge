@@ -2,16 +2,10 @@ import Head from "next/head";
 import {
   Heading,
   Link,
-  Text,
-  Stack,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  InputRightElement,
-  Button,
+  Text
 } from "@chakra-ui/react";
-import { PhoneIcon} from '@chakra-ui/icons'
 import styles from "../styles/Home.module.css";
+import Form from "./components/Form";
 
 export default function Home() {
   return (
@@ -28,17 +22,8 @@ export default function Home() {
         <Text className={styles.description} fontSize="sm">
           Enter your phone number to continue.
         </Text>
-
-        <Stack spacing={7} className={styles.form}>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none" 
-            children={<PhoneIcon/>}
-            />
-            <Input type="tel" placeholder="Phone number" />
-            {' '}
-          </InputGroup>
-          <Button colorScheme="blue" isFullWidth="true">Verify</Button>
-        </Stack>
+       <Form/>
+        
       </main>
 
       <footer className={styles.footer}>
