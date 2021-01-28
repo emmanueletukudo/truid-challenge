@@ -30,7 +30,7 @@ class Form extends React.Component {
         <Stack spacing={7} className={styles.form}>
           <InputGroup>
             <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
-            <Input type="tel" placeholder="Phone number" />{" "}
+            <Input type="tel" disabled={this.state.isLoading} placeholder="Phone number" />{" "}
           </InputGroup>
           {!this.state.isLoading ?  <Button colorScheme="blue" type="submit" isFullWidth="true">
             Verify
