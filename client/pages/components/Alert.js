@@ -6,6 +6,11 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
+import {
+    Heading,
+    Link,
+    Text
+  } from "@chakra-ui/react";
 
 class AlertClass extends React.Component {
   constructor(props) {
@@ -18,8 +23,10 @@ class AlertClass extends React.Component {
       <Alert status="success">
         <AlertIcon />
         <Box flex="1">
-          <AlertTitle>Success!</AlertTitle>
+          <AlertTitle>{this.props.status}</AlertTitle>
           <AlertDescription display="block">
+            <Text>Sim change: {this.props.change}</Text>
+            <Text>Las sim change: {this.props.change}</Text>
             Your application has been received. We will review your application
             and respond within the next 48 hours.
           </AlertDescription>
