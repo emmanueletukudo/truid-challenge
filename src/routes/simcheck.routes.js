@@ -6,8 +6,9 @@
  */
 const { Router } = require("express");
 const router = Router();
-const SimCheckCtrl = require("../controllers/simcheck.controller");
+const {check, getAccessToken} = require("../controllers/simcheck.controller");
 
-router.get("/", SimCheckCtrl.check);
+router.post("/access-token", getAccessToken);
+router.post("/sim-check", check);
 
 module.exports = router;
