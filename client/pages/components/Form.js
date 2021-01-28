@@ -15,13 +15,13 @@ class Form extends React.Component {
     super();
     this.state = {
       isLoading: false,
-      
     };
+    this.verify = this.verify.bind(this);
   }
 
   verify(e){
       e.preventDefault();
-      console.log(e);
+      this.setState({isLoading: true});
   }
 
   render() {
@@ -32,9 +32,9 @@ class Form extends React.Component {
             <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
             <Input type="tel" placeholder="Phone number" />{" "}
           </InputGroup>
-          <Button colorScheme="blue" type="submit" isFullWidth="true">
+          {!this.state.isLoading ?  <Button colorScheme="blue" type="submit" isFullWidth="true">
             Verify
-          </Button>
+          </Button> : ""}
           {this.state.isLoading ? <Button
             isLoading
             loadingText="Verifying..."
