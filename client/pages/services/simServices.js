@@ -1,12 +1,9 @@
-import useSWR from 'swr';
+import axios from "axios";
 
-async function simCheck(){
-    const {data, error} = useSWR("/api/v1/sims", fetcher)
-    if(error) return <div>Faild to load</div>
-    if(!data) return <div>loading...</div>
-
-    console.log(data);
-    //return data;
+ const simCheck = async (phone) => {
+    const res = await axios.post("api/v1/sims/sim-check", {phone});
+    //return res.data;
+    console.log(res);
 }
 
 export default simCheck;

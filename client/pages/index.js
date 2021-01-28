@@ -6,8 +6,9 @@ import {
 } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 import Form from "./components/Form";
+import Alert from "./components/Alert";
 
-export default function Home() {
+export default function Home({}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -24,6 +25,7 @@ export default function Home() {
         </Text>
        <Form/>
         
+        <Alert/>
       </main>
 
       <footer className={styles.footer}>

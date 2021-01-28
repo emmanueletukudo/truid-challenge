@@ -5,6 +5,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  CloseButton
 } from "@chakra-ui/react";
 import {
     Heading,
@@ -15,14 +16,16 @@ import {
 class AlertClass extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+        show: false,
+    };
   }
 
   render() {
     return (
-      <Alert status="success">
+      <Alert status="info" variant="solid">
         <AlertIcon />
-        {this.props.simDetails.map((item, index) => 
+        {this.props.simDetails && this.props.simDetails.map((item, index) => 
             <Box flex="1" key={index}>
             <AlertTitle>{item.status}</AlertTitle>
             <AlertDescription display="block">

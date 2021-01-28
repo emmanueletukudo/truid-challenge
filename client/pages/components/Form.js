@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
 import styles from "../../styles/Form.module.css";
-
+import simService from "../services/simServices";
 class Form extends React.Component {
   constructor() {
     super();
@@ -49,4 +49,8 @@ class Form extends React.Component {
   }
 }
 
+Form.getStaticProps = async function(){
+    const res = await simService();
+    console.log(res);
+}
 export default Form;
