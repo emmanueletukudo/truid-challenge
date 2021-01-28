@@ -1,65 +1,56 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import {
+  Heading,
+  Link,
+  Text,
+  Stack,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  InputRightElement,
+  Button,
+} from "@chakra-ui/react";
+import { PhoneIcon} from '@chakra-ui/icons'
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Emmanuel Etukudo - tru.ID developer experience challenage</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <img src="/tru-ID.png" alt="tru.ID Logo" className={styles.logo} />
+        <Heading as="h1">Verify your sim</Heading>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <Text className={styles.description} fontSize="sm">
+          Enter your phone number to continue.
+        </Text>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <Stack spacing={7} className={styles.form}>
+          <InputGroup>
+            <InputLeftElement pointerEvents="none" 
+            children={<PhoneIcon/>}
+            />
+            <Input type="tel" placeholder="Phone number" />
+            {' '}
+          </InputGroup>
+          <Button colorScheme="blue" isFullWidth="true">Verify</Button>
+        </Stack>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        <Link href="http://tru.id" target="_blank" rel="noopener noreferrer">
+          Verified by <Heading fontSize="md">tru.ID</Heading>{" "}
+          <img
+            src="/tru-ID.png"
+            alt="Vercel Logo"
+            className={styles.logoFooter}
+          />
+        </Link>
       </footer>
     </div>
-  )
+  );
 }
