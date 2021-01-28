@@ -15,13 +15,20 @@ class Form extends React.Component {
     super();
     this.state = {
       isLoading: false,
+      phone: "",
     };
     this.verify = this.verify.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
+  onChange(e){
+    this.setState({[e.target.name]: e.target.value});
+  }
   verify(e){
       e.preventDefault();
       this.setState({isLoading: true});
+      const phone = this.state.phone;
+      simService(phone);
   }
 
   render() {
@@ -30,7 +37,7 @@ class Form extends React.Component {
         <Stack spacing={7} className={styles.form}>
           <InputGroup>
             <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
-            <Input type="tel" disabled={this.state.isLoading} placeholder="Phone number" />{" "}
+            <Input name="phone" value={this.state.phone} onChange={this.onChange} type="tel" disabled={this.state.isLoading} placeholder="Phone number" />{" "}
           </InputGroup>
           {!this.state.isLoading ?  <Button colorScheme="blue" type="submit" isFullWidth="true">
             Verify
@@ -49,7 +56,7 @@ class Form extends React.Component {
   }
 }
 
-Form.getStaticProps = async function(){
+Form.getInitialProps = async function(){
     const res = await simService();
     console.log(res);
 }
