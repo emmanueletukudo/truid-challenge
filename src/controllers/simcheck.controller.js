@@ -4,8 +4,12 @@
  * Website: http://eetukudo.dev
  * Ensure you run npm install if you have not done that already.
  */
+const axios = require("axios");
+let qs = require('qs');
+const base_URL = "https://eu.api.tru.id";
+const trueCredentials = require("../../tru.json");
 
-const check =  async () => {
+const check =  async (req, res, next) => {
   try {
     let { phone } = req.body;
     if (!phone) {
@@ -25,7 +29,7 @@ const check =  async () => {
   }
 }
 
-const simCheck = async () => {
+const simCheck = async (phone) => {
   try {
     const reqObj = {
       URI: `${base_URL}/sim_check/v0.1/checks`,
