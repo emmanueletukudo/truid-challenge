@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
 import styles from "../../styles/Form.module.css";
-import simCheck from "../services/simServices";
-import { simToast } from "../services/AlertService";
+import simCheck from "../../services/simServices";
+import { simToast } from "../../services/AlertService";
 
 class Form extends React.Component {
   constructor(props) {
