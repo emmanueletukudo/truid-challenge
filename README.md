@@ -56,15 +56,19 @@ You can hold the command and click on the `http://localhost:3000` to launch the 
 ## Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
 
-1. To run the test for the frontend `cd` into the client director and run the command below:
+1. To run the test for the frontend `cd` into the client directory and run the command below:
 
 ```bash
 npm run test
 ```
-2. To run test for the backend run the command below:
+2. To run the test for the backend run the command below:
 ```bash
 npm run test
 ```
+## Deployment
+To prepare the application for deployment, follow the steps below:
+1. `CD` into the client folder and run the `npm run build` your the terminal for `mac` users and command prompt for `windows` users.
+2. Chose a loud hosting server to deploy your app in my case `Heruku`. 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
