@@ -10,7 +10,8 @@ import {
 import { PhoneIcon } from "@chakra-ui/icons";
 import styles from "../../styles/Form.module.css";
 import simCheck from "../services/simServices";
-import Alert from "../components/Alert";
+import {simToast} from "../services/AlertService";
+
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,14 @@ class Form extends React.Component {
       this.setState({isLoading: true});
       const phone = this.state.phone;
       let sim = simCheck(phone)
-      .then(res => this.setState({simDetails: res}))
+      .then(res => {
+        //console.log(res);
+        const details = {};
+        details.changeDate =  new Date(res.last_sim_change_at).toDateString() ;
+        details.status = res.status;
+        details.simChange = (!res.no_sim_change) ? "No" : "Yes";
+        simToast(details.status, `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`, "success");
+      })
       .catch(err => this.setState({errors: err}));
   }
 
@@ -58,7 +66,6 @@ class Form extends React.Component {
           </Button> : ""}
         </Stack>
       </form>
-      <Alert props={this.state.simDetails}/>
       </div>
     );
   }
