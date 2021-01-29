@@ -9,13 +9,16 @@ import {
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
 import styles from "../../styles/Form.module.css";
-import simService from "../services/simServices";
+import simCheck from "../services/simServices";
+import Alert from "../components/Alert";
 class Form extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isLoading: false,
       phone: "",
+      simDetails: "",
+      errors: "",
     };
     this.verify = this.verify.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -28,18 +31,21 @@ class Form extends React.Component {
       e.preventDefault();
       this.setState({isLoading: true});
       const phone = this.state.phone;
-      simService(phone);
+      let sim = simCheck(phone)
+      .then(res => this.setState({simDetails: res}))
+      .catch(err => this.setState({errors: err}));
   }
 
   render() {
     return (
+      <div>
       <form onSubmit={this.verify}>
         <Stack spacing={7} className={styles.form}>
           <InputGroup>
             <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
             <Input name="phone" value={this.state.phone} onChange={this.onChange} type="tel" disabled={this.state.isLoading} placeholder="Phone number" />{" "}
           </InputGroup>
-          {!this.state.isLoading ?  <Button colorScheme="blue" type="submit" isFullWidth="true">
+          {!this.state.isLoading ?  <Button colorScheme="blue" disabled={!this.state.phone} type="submit" isFullWidth="true">
             Verify
           </Button> : ""}
           {this.state.isLoading ? <Button
@@ -52,12 +58,10 @@ class Form extends React.Component {
           </Button> : ""}
         </Stack>
       </form>
+      <Alert props={this.state.simDetails}/>
+      </div>
     );
   }
 }
 
-Form.getInitialProps = async function(){
-    const res = await simService();
-    console.log(res);
-}
 export default Form;

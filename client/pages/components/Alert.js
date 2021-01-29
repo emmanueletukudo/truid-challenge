@@ -13,19 +13,11 @@ import {
     Text
   } from "@chakra-ui/react";
 
-class AlertClass extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        show: false,
-    };
-  }
-
-  render() {
+const AlertComponent = ({props}) => {
     return (
       <Alert status="info" variant="solid">
         <AlertIcon />
-        {this.props.simDetails && this.props.simDetails.map((item, index) => 
+        {props.simDetails && props.simDetails.map((item, index) => 
             <Box flex="1" key={index}>
             <AlertTitle>{item.status}</AlertTitle>
             <AlertDescription display="block">
@@ -36,11 +28,9 @@ class AlertClass extends React.Component {
             </AlertDescription>
           </Box>
         )}
-        
         <CloseButton position="absolute" right="8px" top="8px" />
       </Alert>
     );
-  }
 }
 
-export default AlertClass;
+export default AlertComponent;

@@ -6,7 +6,6 @@ import {
 } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 import Form from "./components/Form";
-import Alert from "./components/Alert";
 
 export default function Home({}) {
   return (
@@ -24,8 +23,6 @@ export default function Home({}) {
           Enter your phone number to continue.
         </Text>
        <Form/>
-        
-        <Alert/>
       </main>
 
       <footer className={styles.footer}>
