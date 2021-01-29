@@ -10,7 +10,7 @@ import {
 import { PhoneIcon } from "@chakra-ui/icons";
 import styles from "../../styles/Form.module.css";
 import simCheck from "../services/simServices";
-import {simToast} from "../services/AlertService";
+import { simToast } from "../services/AlertService";
 
 class Form extends React.Component {
   constructor(props) {
@@ -18,54 +18,77 @@ class Form extends React.Component {
     this.state = {
       isLoading: false,
       phone: "",
-      simDetails: "",
       errors: "",
     };
     this.verify = this.verify.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e){
-    this.setState({[e.target.name]: e.target.value});
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
-  verify(e){
-      e.preventDefault();
-      this.setState({isLoading: true});
-      const phone = this.state.phone;
-      let sim = simCheck(phone)
-      .then(res => {
+  verify(e) {
+    e.preventDefault();
+    this.setState({ isLoading: true });
+    const phone = this.state.phone;
+    let sim = simCheck(phone)
+      .then((res) => {
         //console.log(res);
         const details = {};
-        details.changeDate =  new Date(res.last_sim_change_at).toDateString() ;
+        details.changeDate = new Date(res.last_sim_change_at).toDateString();
         details.status = res.status;
-        details.simChange = (!res.no_sim_change) ? "No" : "Yes";
-        simToast(details.status, `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`, "success");
+        details.simChange = !res.no_sim_change ? "No" : "Yes";
+        simToast(
+          details.status,
+          `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
+          "success"
+        );
       })
-      .catch(err => this.setState({errors: err}));
+      .catch((err) => this.setState({ errors: err }));
   }
 
   render() {
     return (
       <div>
-      <form onSubmit={this.verify}>
-        <Stack spacing={7} className={styles.form}>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
-            <Input name="phone" value={this.state.phone} onChange={this.onChange} type="tel" disabled={this.state.isLoading} placeholder="Phone number" />{" "}
-          </InputGroup>
-          {!this.state.isLoading ?  <Button colorScheme="blue" disabled={!this.state.phone} type="submit" isFullWidth="true">
-            Verify
-          </Button> : ""}
-          {this.state.isLoading ? <Button
-            isLoading
-            loadingText="Verifying..."
-            colorScheme="teal"
-            variant="outline"
-          >
-            Submit
-          </Button> : ""}
-        </Stack>
-      </form>
+        <form onSubmit={this.verify}>
+          <Stack spacing={7} className={styles.form}>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none" children={<PhoneIcon />} />
+              <Input
+                name="phone"
+                value={this.state.phone}
+                onChange={this.onChange}
+                type="tel"
+                disabled={this.state.isLoading}
+                placeholder="Phone number"
+              />{" "}
+            </InputGroup>
+            {!this.state.isLoading ? (
+              <Button
+                colorScheme="blue"
+                disabled={!this.state.phone}
+                type="submit"
+                isFullWidth="true"
+              >
+                Verify
+              </Button>
+            ) : (
+              ""
+            )}
+            {this.state.isLoading ? (
+              <Button
+                isLoading
+                loadingText="Verifying..."
+                colorScheme="teal"
+                variant="outline"
+              >
+                Submit
+              </Button>
+            ) : (
+              ""
+            )}
+          </Stack>
+        </form>
       </div>
     );
   }
