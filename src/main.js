@@ -10,11 +10,12 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
 const sims = require("./routes/simcheck.routes");
-/**
- * 1. create a .env
- * 2. set mogoURI to you DB URI
- */
-//mongoose.connect(process.env.mongoURI, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+const path = require("path");
+//serve static files 
+app.use(express.static(path.join(__dirname, "../client/out")));
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/out'));
+});
 
 //app config
 app.use(express.json());
