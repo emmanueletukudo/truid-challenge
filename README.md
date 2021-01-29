@@ -51,12 +51,19 @@ Applocation is listening at 5000
 [1] ready - started server on http://localhost:3000
 [1] event - compiled successfully
 ```
-You can hold the command and click on the `http://localhost:3000` to launch the application. you should have a web page similar to the one below.
+You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the one below.
 
 ## Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
 
-1. To run the test for the frontend you can run the command below:
+1. To run the test for the frontend `cd` into the client director and run the command below:
+
+```bash
+npm run test
+```
+2. To run test for the backend run the command below:
+```bash
+npm run test
 ```
 
 ## Contributing
