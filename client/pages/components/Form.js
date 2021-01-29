@@ -35,7 +35,7 @@ class Form extends React.Component {
       .then((res) => {
         if(res){
         const details = {};
-        details.changeDate = "Fri 29 2021";
+        details.changeDate = new Date(res.last_sim_change_at).toDateString();
         details.status = res.status;
         details.simChange = (!res.no_sim_change) ? "No" : "Yes";
         simToast(
