@@ -1,8 +1,11 @@
 # truid-challenge
 
 Solution for tru.ID's developer experience challenge. An application to implement tru.ID's simCheck API.
+![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/se71dg8jdzjekroqr3um.png)
+![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/suq88zqrv4bcxph7yd23.png)
+![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/xu3yivqfkntdqduiwaso.png)
 
-## Requirement 
+## Requirements 
 - Nodejs v12.18.0
 - tru.ID CLI
 

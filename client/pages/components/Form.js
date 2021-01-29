@@ -33,11 +33,11 @@ class Form extends React.Component {
     const phone = this.state.phone;
     let sim = simCheck(phone)
       .then((res) => {
-        if(!res === "" || undefined){
+        if(res){
         const details = {};
-        details.changeDate = new Date(res.last_sim_change_at).toDateString();
+        details.changeDate = "Fri 29 2021";
         details.status = res.status;
-        details.simChange = (res.no_sim_change === false) ? "No" : "Yes";
+        details.simChange = (!res.no_sim_change) ? "No" : "Yes";
         simToast(
           details.status,
           `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
