@@ -20,7 +20,7 @@ const check =  async (req, res, next) => {
     const checkRes = await simCheck(phone);
     res.json(checkRes);
   } catch (error) {
-    console.log(error);
+    return {error};
   }
 }
 
@@ -42,7 +42,7 @@ const simCheck = async (phone) => {
 
     return simCheckRes.data;
   } catch (error) {
-    console.log(error);
+    return{error};
   }
 }
 
