@@ -11,6 +11,8 @@ const app = express();
 const port = 5000;
 const sims = require("./routes/simcheck.routes");
 
+const supertest = require('supertest')
+const request = supertest(app);
 /**
  * 1. create a .env
  * 2. set mogoURI to you DB URI
@@ -29,3 +31,5 @@ app.listen(port, () => {
 
 //register your endpoints here
 app.use("/api/v1/sims", sims);
+
+module.exports = app;
