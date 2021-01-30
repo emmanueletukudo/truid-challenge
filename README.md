@@ -6,6 +6,7 @@ Solution for tru.ID's developer experience challenge. An application to implemen
 ![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/se71dg8jdzjekroqr3um.png)
 ![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/suq88zqrv4bcxph7yd23.png)
 ![tru.ID-challenge](https://dev-to-uploads.s3.amazonaws.com/i/xu3yivqfkntdqduiwaso.png)
+![tru.ID-challeng](https://dev-to-uploads.s3.amazonaws.com/i/a642ljy5ssjr80q9xnnr.png)
 
 ## Requirements 
 - Nodejs v12.18.0
@@ -38,7 +39,7 @@ tru projects:create truid-challenge
 ```bash
 git clone https://github.com/emmanueletukudo/truid-challenge.git
 ```
-6. Step 6 relies on the previous step to avoid errors ensure to generate your `tru.json` file before you continue.
+6. Step 6 relies on the previous step to avoid errors ensure to generate your `tru.json` file before you continue. Run `npm run start` to start the application.
 
 ## Usage
 
