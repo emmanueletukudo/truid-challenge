@@ -43,6 +43,7 @@ class Form extends React.Component {
           `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
           "success"
         );
+        location.reload();
         }
       })
       .catch(err => {

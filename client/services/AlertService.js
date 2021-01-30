@@ -8,6 +8,5 @@ import { createStandaloneToast } from "@chakra-ui/react"
       status: status,
       duration: 9000,
       isClosable: true,
-      onCloseComplete: window.location.reload()
     })
   }
