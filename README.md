@@ -42,9 +42,24 @@ git clone https://github.com/emmanueletukudo/truid-challenge.git
 6. Step 6 relies on the previous step to avoid errors ensure to generate your `tru.json` file before you continue. Run `npm run start` to start the application.
 
 ## Usage
+To view the production build run the command below:
 
 ```bash
-cd truid-callenge && npm run dev
+npm start
+```
+Response:
+
+```
+> node src/index.js
+
+Application is listening at 5000
+```
+Visit `http://localhost:5000` on your preferred browser to view the application.
+
+For development build run the command below:
+
+```bash
+npm run dev
 
 [nodemon] to restart at any time, enter `rs`
 [0] [nodemon] watching path(s): *.*
@@ -57,7 +72,7 @@ Applocation is listening at 5000
 [1] ready - started server on http://localhost:3000
 [1] event - compiled successfully
 ```
-You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the one below.
+You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the one below. Note: all commands assume you are in the application's root folder.
 
 ## Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
