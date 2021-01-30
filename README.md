@@ -72,7 +72,7 @@ Applocation is listening at 5000
 [1] ready - started server on http://localhost:3000
 [1] event - compiled successfully
 ```
-You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the one below. Note: all commands assume you are in the application's root folder.
+You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the screenshots above. Note: All commands assumes you are in the application's root folder.
 
 ## Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
@@ -88,8 +88,14 @@ npm run test
 ```
 ## Deployment
 To prepare the application for deployment, follow the steps below:
-1. `CD` into the client folder and run the `npm run build` your the terminal for `mac` users and command prompt for `windows` users.
-2. Chose a loud hosting server to deploy your app in my case `Heruku`. 
+1. `CD` into the client folder and run the `npm run build` in the terminal for `mac` users and command prompt for `windows` users.
+2. Run `npm run prod` to export the application to static HTML and Javascript, the exported files can be found in the out folder.
+
+3. Chose a cloud hosting server to deploy your app to,  in my case `Heruku`.
+
+4. Connect your `giHub` to the `Heruku`.
+
+5. Publish your app. Happy Hacking.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
