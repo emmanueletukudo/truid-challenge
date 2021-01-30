@@ -8,10 +8,6 @@ import { createStandaloneToast } from "@chakra-ui/react"
       status: status,
       duration: 9000,
       isClosable: true,
-      onCloseComplete: redirect()
+      onCloseComplete: window.location.reload()
     })
-  }
-
-  const redirect = ()  => {
-    
   }
