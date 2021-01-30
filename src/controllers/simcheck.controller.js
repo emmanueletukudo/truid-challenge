@@ -18,8 +18,12 @@ const check =  async (req, res, next) => {
         .json({ phone: "The phone number field is required" });
     }
     const checkRes = await simCheck(phone);
-    
-    res.json(checkRes);
+
+    if(checkRes.error){
+      //console.log(checkRes.error.response.data);
+      return res.json({errors: checkRes.error.response.data});
+    }
+    res.json({success: checkRes});
   } catch (error) {
     return {error};
   }

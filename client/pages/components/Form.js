@@ -33,21 +33,21 @@ class Form extends React.Component {
     const phone = this.state.phone;
     let sim = simCheck(phone)
       .then((res) => {
-        if(res){
+        if(res.success){
         const details = {};
         details.changeDate = new Date(res.last_sim_change_at).toDateString();
         details.status = res.status;
         details.simChange = (!res.no_sim_change) ? "No" : "Yes";
+
         simToast(
           details.status,
           `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
           "success"
         );
-        location.reload();
         }
-      })
-      .catch(err => {
-        console.log(err);
+          const {errors} = res;
+          simToast(errors.title, errors.detail, "error");
+        //location.reload();
       });
   }
 
