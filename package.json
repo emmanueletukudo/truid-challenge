@@ -6,7 +6,7 @@
   "scripts": {
     "client": "npm run dev --prefix client",
     "test": "jest",
-    "start": "node src/index.js",
+    "start": "cd ./client && npm run build && npm run prod && cd .. && node src/index.js",
     "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "publishConfig": {
