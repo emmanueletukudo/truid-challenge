@@ -44,9 +44,16 @@ class Form extends React.Component {
           `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
           "success"
         );
+
+        setTimeout(() => {
+          location.reload();
+        }, 9000)
+
         }
+        if(res.errors){
           const {errors} = res;
           simToast(errors.title, errors.detail, "error");
+        }
         //location.reload();
       });
   }
