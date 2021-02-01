@@ -11,6 +11,7 @@ const app = express();
 const port = 5000;
 const sims = require("./routes/simcheck.routes");
 const path = require("path");
+
 //serve static files 
 app.use(express.static(path.join(__dirname, "../client/out")));
 app.get('/*', (req, res) => {
