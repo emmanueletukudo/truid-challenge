@@ -4,7 +4,6 @@ import {
   InputGroup,
   InputLeftElement,
   Input,
-  InputRightElement,
   Button,
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
