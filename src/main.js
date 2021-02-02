@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 //
 app.listen(port, () => {
-  console.log(`Applocation is listening at ${port}`);
+  console.log(`Application is listening at ${port}`);
 });
 
 //register your endpoints here

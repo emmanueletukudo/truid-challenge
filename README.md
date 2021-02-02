@@ -91,14 +91,13 @@ Visit `http://localhost:5000` on your preferred browser to view the application.
 
 
 ## Deployment
+
 To prepare the application for deployment, follow the steps below:
+
 1. `CD` into the client folder and run the `npm run build` in the terminal for `mac` users and command prompt for `windows` users.
-2. Run `npm run prod` to export the application to static HTML and Javascript, the exported files can be found in the out folder.
-
-3. Chose a cloud hosting server to deploy your app to,  in my case `Heruku`.
-
-4. Connect your `giHub` to the `Heruku`.
-
+2. Run `npm run prod` to export the application to static HTML and JavaScript, the exported files can be found in the out folder.
+3. Chose a cloud hosting server to deploy your app to,  in my case `Heroku`.
+4. Connect your `giHub` to the `Heroku`.
 5. Publish your app. Happy Hacking.
 
 ## Contributing
