@@ -39,22 +39,12 @@ tru projects:create truid-challenge
 ```bash
 git clone https://github.com/emmanueletukudo/truid-challenge.git
 ```
-6. Step 6 relies on the previous step to avoid errors ensure to generate your `tru.json` file before you continue. Run `npm run start` to start the application.
+6. Install dependencies for the server and client: `npm install && cd client && npm install && cd ..`
+7. Step 6 relies on the previous step to avoid errors ensure to generate your `tru.json` file before you continue. Run `npm run start` to start the application.
 
-## Usage
-To view the production build run the command below:
+## Development
 
-```bash
-npm start
-```
-Response:
-
-```
-> node src/index.js
-
-Application is listening at 5000
-```
-Visit `http://localhost:5000` on your preferred browser to view the application.
+### Running the Client & Server
 
 For development build run the command below:
 
@@ -74,7 +64,7 @@ Applocation is listening at 5000
 ```
 You can hold the command and click on the `http://localhost:3000` to launch the application. You should have a web page similar to the screenshots above. Note: All commands assumes you are in the application's root folder.
 
-## Testing
+### Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
 
 1. To run the test for the frontend `cd` into the client directory and run the command below:
@@ -86,6 +76,24 @@ npm run test
 ```bash
 npm run test
 ```
+
+## Production Usage
+
+To view the production build run the command below:
+
+```bash
+npm start
+```
+Response:
+
+```
+> node src/index.js
+
+Application is listening at 5000
+```
+Visit `http://localhost:5000` on your preferred browser to view the application.
+
+
 ## Deployment
 To prepare the application for deployment, follow the steps below:
 1. `CD` into the client folder and run the `npm run build` in the terminal for `mac` users and command prompt for `windows` users.
