@@ -67,12 +67,8 @@ You can hold the command and click on the `http://localhost:3000` to launch the 
 ### Testing
 The test files for the frontend can be found in `test` folder in the client directory. Similarly, the test files for endpoints can be found in `test` folder in the root directory of the application.
 
-1. To run the test for the frontend `cd` into the client directory and run the command below:
+To run the test for the backend run the command below:
 
-```bash
-npm run test
-```
-2. To run the test for the backend run the command below:
 ```bash
 npm run test
 ```
