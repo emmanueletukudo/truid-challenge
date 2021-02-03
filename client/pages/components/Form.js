@@ -4,7 +4,6 @@ import {
   InputGroup,
   InputLeftElement,
   Input,
-  InputRightElement,
   Button,
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
@@ -41,7 +40,7 @@ class Form extends React.Component {
 
         simToast(
           details.status,
-          `Last sim changed: ${details.changeDate}. Sim changed in the last 7 days: ${details.simChange}`,
+          `Last SIM changed: ${details.changeDate}. SIM changed in the last 7 days: ${details.simChange}`,
           "success"
         );
 

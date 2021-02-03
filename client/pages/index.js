@@ -17,7 +17,7 @@ export default function Home({}) {
 
       <main className={styles.main}>
         <img src="/tru-ID.png" alt="tru.ID Logo" className={styles.logo} />
-        <Heading as="h1">Verify your sim</Heading>
+        <Heading as="h1">Verify your SIM</Heading>
 
         <Text className={styles.description} fontSize="sm">
           Enter your phone number to continue.
